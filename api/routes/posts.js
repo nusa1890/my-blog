@@ -62,6 +62,18 @@ router.delete("/:id", async(req, res)=>{
 //DELETE POST
 
 //GET POST
+router.get("/:id",async(req,res)=>{
+  try {
+    const posts = await Post.findById(req.params.id);
+    res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+//GET POST
+
+
+//GET ALL POST
 router.get("/",async(req,res)=>{
   const username = req.query.user;
   const catName = req.query.cat
@@ -81,10 +93,6 @@ router.get("/",async(req,res)=>{
     res.status(500).json(err);
   }
 });
-//GET POST
-
-
-//GET ALL POST
 //GET ALL POST
 
 module.exports = router;

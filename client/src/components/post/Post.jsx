@@ -1,35 +1,32 @@
 import "./post.css"
+import {Link} from "react-router-dom";
 
-export default function post() {
+export default function post({posts}) {
+  
   return (
     <div className='post'>
-      <img className="postImg"
-        src="https://picsum.photos/200"
-        alt=""
-      />
+      {post.photo &&(
+        <img className="postImg"
+          src={post.photo}
+          alt=""
+        />
+      )}
       <div className='postInfo'>
         <div className='postCats'>
-          <span className="postCat">Music</span>
-          <span className="postCat">Life</span>
+          {posts.categories.map((c)=>(
+            <span className="postCat">c.name</span>
+          ))}
         </div>
-        <span className="postTitle">Lorem ipsum</span>
+        <Link to={`/post/${posts._id}`} className="link">
+          <span className="postTitle">{posts.title}</span>
+        </Link>
         <hr />
-        <span className="postDate">1 hour ago</span>
+        <span className="postDate">
+          {new Date(posts.createdAt).toDateString()}
+        </span>
       </div>
       <p className="postDesc">
-        Eiusmod commodo elit eu minim. Deserunt ipsum aute sit
-        reprehenderit dolore fugiat labore dolor. Labore deserunt 
-        sint consectetur laborum non Lorem velit magna dolore officia
-        aute irure incididunt.Eiusmod commodo elit eu minim. Deserunt ipsum aute sit
-        reprehenderit dolore fugiat labore dolor. Labore deserunt 
-        sint consectetur laborum non Lorem velit magna dolore officia
-        aute irure incididunt.Eiusmod commodo elit eu minim. Deserunt ipsum aute sit
-        reprehenderit dolore fugiat labore dolor. Labore deserunt 
-        sint consectetur laborum non Lorem velit magna dolore officia
-        aute irure incididunt.Eiusmod commodo elit eu minim. Deserunt ipsum aute sit
-        reprehenderit dolore fugiat labore dolor. Labore deserunt 
-        sint consectetur laborum non Lorem velit magna dolore officia
-        aute irure incididunt.
+        {posts.desc}
       </p>
     </div>
     
