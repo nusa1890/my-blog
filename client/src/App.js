@@ -5,16 +5,17 @@ import Settings from "./pages/settings/Settings";
 import Home from "./pages/home/Home.jsx"
 import Single from "./pages/single/Single.jsx"
 import Write from "./pages/write/Write";
-
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Link
 } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "./context/Context";
 
 function App() {
-  const user=true;
+  const {user} = useContext(Context)
   return (
     <Router>
       <TopBar />
