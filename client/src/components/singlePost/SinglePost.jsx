@@ -24,7 +24,7 @@ export default function SinglePost() {
       <div className="singlePostWrapper">
       {post.photo && (
         <img 
-          src={post.photo}
+          src={"http://localhost:5000/images/"+post.photo}
           alt=""
           className="singlePostImg"
         />
