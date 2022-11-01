@@ -59,10 +59,4 @@ router.get("/:id",async(req,res)=>{
 });
 //GET USER
 
-
-
-
-
-
-
 module.exports = router;
