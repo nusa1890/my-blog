@@ -72,7 +72,7 @@ export default function SinglePost() {
 
         <h1 className="singlePostTitle">
           {title}
-          {post.username === user.username && (
+          {user ? (post.username === user.username && (
             <div className="singlePostEdit">
               <i 
                 className="singlePostIcon fa-regular fa-pen-to-square"
@@ -83,7 +83,8 @@ export default function SinglePost() {
                 onClick={handleDelete}
               ></i>
             </div>
-          )}
+          )): <div></div>}
+          
         </h1>
         )
       }
@@ -100,7 +101,8 @@ export default function SinglePost() {
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
         /> : (
-          <p className="singlePostDesc">{desc}</p>
+          
+          <p dangerouslySetInnerHTML={{__html:desc}} className="singlePostDesc"></p>
         )}
         {updateMode &&
           <button className="singlePostButton" onClick={handleUpdate}>Update</button>
