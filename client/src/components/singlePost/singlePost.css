@@ -31,6 +31,7 @@
   border:none;
   border-bottom: 1px solid lightgrey;
   color: grey;
+  resize:vertical;
 }
 
 .singlePostTitleInput:focus{
@@ -45,6 +46,7 @@
 .singlePostIcon{
   margin-left: 10px;
   cursor: pointer;
+  font-size: 25px;
 }
 
 .singlePostIcon:first-child{
@@ -69,7 +71,20 @@
   font-size: 18px;
   line-height: 25px;
   white-space: pre-wrap;
+  display:inline;
+  word-break: break-word;
 }
+
+.singlePostDesc img{
+  width: 100%;
+  border-radius: 5px;
+  object-fit: contain;
+}
+.singlePostDesc li{
+  margin-left: 50px;
+}
+
+
 
 .singlePostDesc::first-letter{
   margin-left: 20px;
@@ -82,6 +97,7 @@
   color: #666;
   font-size: 18px;
   line-height: 25px;
+  resize:vertical;
 }
 
 .singlePostDescInput:focus{

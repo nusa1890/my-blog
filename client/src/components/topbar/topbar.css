@@ -20,7 +20,7 @@
   flex:6;
 }
 .topIcon{
-  font-size: 20px;
+  font-size: 30px;
   margin-right: 10px;
   color: #444;
   cursor: pointer;
@@ -40,9 +40,9 @@
   padding: 0;
 }
 
-.topListItem{
-  margin-right: 20px;
-  font-size: 18px;
+.topListItem {
+  margin-right: 35px;
+  font-size: 24px;
   font-weight: 300;
   cursor: pointer;
 }

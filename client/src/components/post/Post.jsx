@@ -24,7 +24,7 @@ export default function Post({posts}) {
         </span>
       </div>
       <p className="postDesc">
-        {posts.desc}
+      {posts.desc}
       </p>
     </div>
     
